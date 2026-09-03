@@ -1,0 +1,360 @@
+/* 시작화면 */
+#start-screen {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(255, 255, 255, 0.75);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+#game-guide {
+    background-color: rgba(172, 210, 212, 0.9);
+
+    padding: 35px 50px;
+
+    color: white;
+    text-align: center;
+
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+#game-guide h2 {
+    margin-top: 0;
+}
+
+#game-guide p {
+    line-height: 1.7;
+}
+
+#game-guide button {
+    margin-top: 20px;
+}
+
+
+
+/* 기본적으로 한 줄 */
+h1 {
+    white-space: nowrap;
+    margin: 0;
+}
+
+.mobile-break {
+    display: none;
+}
+
+
+/* 가로 화면 */
+@media (min-aspect-ratio: 1/1) {
+    h1 {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    #heart-bar {
+        position: fixed;
+        top: 60px;
+        left: 50%;
+
+        transform: translateX(-50%);
+
+        margin: 0;
+    }
+}
+
+
+/* 세로 화면 */
+@media (max-aspect-ratio: 1/1) {
+    h1 {
+        margin-top: 10px;
+        position: fixed;
+        top: 10px;
+        left: 350px;
+
+        transform: none;
+
+        white-space: nowrap;
+    }
+}
+
+
+/* 아주 긴 세로 화면 */
+@media (max-aspect-ratio: 3/4) {
+    h1 {
+        margin-top: 15px;
+        white-space: normal;
+        width: 150px;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .mobile-break {
+        display: block;
+    }
+}
+
+body {
+    background-color: #d4a36c;
+    background-image: url("images/배경.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+    padding-top: 50px;
+}
+
+/* 고양이 스타일 */
+#cat-area {
+    position: relative;
+    top: 80px;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+#cat-image {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+/* 손 스타일 */
+#hand-image {
+    display: none;
+}
+#hand-image {
+    position: absolute;
+    width: 160px;
+    left: 150px;
+    top: 60px;
+
+    pointer-events: none;
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 12px 22px;
+    margin: 6px;
+
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: bold;
+
+    color: #333;
+    background-color: #ffffff;
+
+    border: 2px solid #333;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    box-shadow: 0 2px 0 #000000;
+
+    transition:
+        transform 0.08s ease,
+        box-shadow 0.08s ease,
+        background-color 0.15s ease;
+}
+
+/* 마우스를 올렸을 때 */
+button:hover {
+    background-color: #fcedf4;
+}
+
+/* 누르는 순간 */
+button:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #333;
+}
+
+/* 잠긴 버튼 */
+button:disabled {
+    opacity: 0.5;
+    cursor: default;
+    box-shadow: 0 2px 0 #777;
+}
+#buttons {
+    position: relative;
+    margin-top: 40px;
+}
+
+/* 하트바 스타일 */
+#heart-bar {
+    width: 400px;
+    height: 15px;
+    border: 2px solid white;
+    margin: 30px auto;
+}
+
+#heart-fill {
+    width: 0%;
+    height: 100%;
+    background-color: rgb(255, 98, 124);
+}
+
+/* 스탯창 */
+#stats {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    text-align: left;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    position: relative;
+
+    font-size: 16px;
+}
+
+.stat-name {
+    width: 50px;
+    font-weight: bold;
+}
+
+.stat-bar {
+    width: 180px;
+    height: 12px;
+
+    background-color: #333;
+    border: 1px solid #777;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.stat-bar::after {
+    content: "";
+
+    position: absolute;
+
+    left: 10%;
+    top: 0;
+
+    width: 2px;
+    height: 100%;
+
+    background-color: red;
+}
+
+.stat-fill {
+    width: 30%;
+    height: 100%;
+
+    transition: width 0.2s ease;
+}
+
+.stat-name {
+    font-weight: bold;
+}
+
+/* 스탯 색 */
+.fullness-stat .stat-fill {
+    background-color: #9b633e;
+}
+
+.thirst-stat .stat-fill {
+    background-color: #6ec6ff;
+}
+
+.interest-stat .stat-fill {
+    background-color: #ffe45e;
+}
+
+.mood-stat .stat-fill {
+    background-color: #ff6fae;
+}
+
+/* 스탯 변화 애니메이션 */
+.stat-change {
+    font-size: 14px;
+    font-weight: bold;
+
+    position: absolute;
+    left: 100%;
+    margin-left: 5px;
+
+    white-space: nowrap;
+
+    animation: statChange 1s ease-out forwards;
+}
+
+.stat-change.plus {
+    color: #aaa;
+}
+
+.stat-change.minus {
+    color: #ff5555;
+}
+
+/* 쓰다듬기 애니메이션 */
+.pet-hand {
+    display: block !important;
+    animation: handMove 0.8s ease-in-out infinite alternate;
+}
+/* 고양이 뽕실뽕실 */
+.pet-cat {
+    animation: catBounce 0.3s ease-in-out infinite alternate;
+}
+@keyframes handMove {
+    from {
+        transform: translateX(-35px) rotate(-8deg);
+    }
+
+    to {
+        transform: translateX(35px) rotate(8deg);
+    }
+}
+@keyframes catBounce {
+    from {
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        transform: translateY(-4px) scale(1.02);
+    }
+}
+
+
+@keyframes statChange {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>고양이와 친해지기</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="start-screen">
+        <div id="game-guide">
+            <h2>고양이와 친해지기</h2>
+
+            <p>
+                고양이의 상태를 관리하며<br>
+                고양이와 친해져 보자!
+            </p>
+
+            <p>
+                포화도, 갈증, 흥미도, 기분 중<br>
+                하나라도 10 이하가 되면 게임 오버!
+            </p>
+
+            <p>
+                게이지가 다 차면 게임 클리어!
+            </p>
+
+            <button onclick="startGame()">게임 시작</button>
+        </div>
+    </div>
+
+    <h1>고양이와 <br class="mobile-break">친해지기</h1>
+
+    <div id="cat-area">
+        <img id="cat-image" src="images/오이이아.png" alt="고양이">
+        <img id="hand-image" src="images/손.png">
+        <p id="message">냐옹</p>
+    </div>
+
+    <div id="stats">
+
+        <div class="stat fullness-stat">
+            <span class="stat-name">포화도</span>
+            <div class="stat-bar">
+                <div id="fullness-bar" class="stat-fill"></div>
+            </div>
+            <span id="fullness">30</span>
+            <span id="fullness-change" class="stat-change"></span>
+        </div>
+
+        <div class="stat thirst-stat">
+            <span class="stat-name">갈증</span>
+            <div class="stat-bar">
+                <div id="thirst-bar" class="stat-fill"></div>
+            </div>
+            <span id="thirst">30</span>
+            <span id="thirst-change" class="stat-change"></span>
+        </div>
+
+        <div class="stat interest-stat">
+            <span class="stat-name">흥미도</span>
+            <div class="stat-bar">
+                <div id="interest-bar" class="stat-fill"></div>
+            </div>
+            <span id="interest">30</span>
+            <span id="interest-change" class="stat-change"></span>
+        </div>
+
+        <div class="stat mood-stat">
+            <span class="stat-name">기분</span>
+            <div class="stat-bar">
+                <div id="mood-bar" class="stat-fill"></div>
+            </div>
+            <span id="mood">30</span>
+            <span id="mood-change" class="stat-change"></span>
+        </div>
+
+    </div>
+
+    <div id="buttons">
+        <button onclick="feed()">사료</button>
+        <button onclick="drink()">물마시기</button>
+        <button onclick="walk()">산책가기</button>
+        <button onclick="pet()">쓰다듬기</button>
+    </div>
+
+    <div id="heart-bar">
+        <div id="heart-fill"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
