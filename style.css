@@ -1,7 +1,9 @@
 /* 시작화면 */
 #start-screen {
     position: fixed;
-    inset: 0;
+
+    top: 0;
+    left: 0;
 
     width: 100vw;
     height: 100vh;
@@ -12,7 +14,7 @@
     justify-content: center;
     align-items: center;
 
-    z-index: 9999;
+    z-index: 1000;
 }
 
 #game-guide {
@@ -79,40 +81,38 @@ h1 {
 
 /* 세로 화면 */
 @media (max-aspect-ratio: 1/1) {
-
     h1 {
+        margin-top: 10px;
         position: fixed;
         top: 10px;
-        left: 55%;
-        transform: translateX(-50%);
+        left: 350px;
+
+        transform: none;
 
         white-space: nowrap;
-        font-size: 28px;
+    }
+}
+
+
+/* 아주 긴 세로 화면 */
+@media (max-aspect-ratio: 3/4) {
+    h1 {
+        margin-top: 15px;
+        right: 5%;
+        white-space: normal;
+        width: 150px;
+        text-align: center;
+        line-height: 1.2;
     }
 
-    #cat-area {
-        top: 120px;
-    }
-
-    #buttons {
-        margin-top: 80px;
-    }
-
-    #buttons button {
-        margin: 0;
-        width: 100%;
-    }
-    
-    #heart-bar {
-        width: 80%;
-        max-width: 400px;
+    .mobile-break {
+        display: block;
     }
 }
 
 body {
     background-color: #d4a36c;
     background-image: url("images/배경.jpg");
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
@@ -121,7 +121,7 @@ body {
     color: white;
     text-align: center;
     font-family: Arial, sans-serif;
-    margin: 0;
+
     padding-top: 50px;
 }
 
@@ -357,27 +357,5 @@ button:disabled {
     100% {
         opacity: 0;
         transform: translateY(-15px);
-    }
-}
-
-@media (max-aspect-ratio: 1/1) {
-
-    #cat-image {
-        width: 360px;
-        height: 360px;
-    }
-
-    .stat {
-        font-size: 18px;
-    }
-
-    .stat-bar {
-        width: 200px;
-        height: 14px;
-    }
-
-    button {
-        font-size: 18px;
-        padding: 14px 20px;
     }
 }
