@@ -112,6 +112,8 @@ h1 {
 body {
     background-color: #d4a36c;
     background-image: url("images/배경.jpg");
+
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
